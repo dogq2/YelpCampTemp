@@ -62,7 +62,7 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 
 //app.listen(port);
 
