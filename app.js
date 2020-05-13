@@ -9,7 +9,8 @@ var express 	= require("express"),
 	Campground 	= require("./models/campground"),
 	Comment		= require("./models/comment"),	
     User        = require("./models/user"),
-	seedDB      = require("./seeds")
+	seedDB      = require("./seeds"),
+	port 		= process.env.PORT || 3000;
 
 //requiring routes
 var commentRoutes 		= require("./routes/comments"),
@@ -62,15 +63,6 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 
-var port = process.env.PORT || 3000;
-
-//app.listen(port);
-
-
 app.listen(port,process.env.IP, function(){
    console.log("The YelpCamp Server Has Started!");
 });
-
-// app.listen(3000, function() {
-//     console.log("Server up");
-// });
